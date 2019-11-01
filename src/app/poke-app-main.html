@@ -1,0 +1,57 @@
+<mat-toolbar>
+  <span>Poke Generation</span>
+</mat-toolbar>
+
+<mat-tab-group class="block">
+
+  <mat-tab label="{{gen1.name}}">
+    <ng-template matTabContent>
+
+      <mat-tab-group class="block__elem" >
+        <mat-tab *ngFor="let species of gen1.pokemon_species | slice:0:7;  index as i; " label="{{species.name}}">
+       
+          <div class="block__info">
+            <div class="block__detail">
+            <img class="block__info_img"
+              src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/{{_ids[i]}}.png">
+            <h1 class="block__info_h1"><strong>{{species.name}}</strong></h1>
+            <h2 class="block__info_h2">{{NameJP[i]}}</h2>
+            <h3 class="block__info_h3">{{Genus[i]}}</h3>
+            <h4 class="block__info_h4">#{{_ids[i]}}</h4>
+            <div class="block__info_button" >
+            <button class="block__button" disabled>{{typeG1A[i]}}</button>
+            <button class="block__button" disabled>{{typeG1B[i]}}</button>
+          </div>
+          </div>
+            <textarea class="block_info_textarea" rows="4" cols="50" disabled>{{Flavor[i]}}</textarea>
+          </div>
+        </mat-tab>
+      </mat-tab-group>
+    </ng-template>
+  </mat-tab>
+  
+  <mat-tab label="{{gen2.name}}">
+    <ng-template matTabContent>
+      <mat-tab-group class="block__elem">
+        <mat-tab *ngFor="let species of gen2.pokemon_species | slice:0:7;  index as i;" label="{{species.name}}">
+          <div class="block__info">
+            <div class="block__detail">
+            <img class="block__info_img"
+              src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/{{_ids2[i]}}.png">
+            <h1 class="block__info_h1"><strong>{{species.name}}</strong></h1>
+            <h2 class="block__info_h2">{{NameJP2[i]}}</h2>
+            <h3 class="block__info_h3">{{Genus2[i]}}</h3>
+            <h4 class="block__info_h4">#{{_ids2[i]}}</h4>
+            <div class="block__info_button" >
+            <button class="block__button" disabled>{{typeG2A[i]}}</button>
+            <button class="block__button" disabled>{{typeG2B[i]}}</button>
+          </div>
+          </div>
+            <textarea class="block_info_textarea" rows="4" cols="50" disabled>{{Flavor2[i]}}</textarea>
+          </div>
+        </mat-tab>
+      </mat-tab-group>
+    </ng-template>
+  </mat-tab>
+
+</mat-tab-group>

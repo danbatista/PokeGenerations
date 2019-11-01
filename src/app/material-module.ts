@@ -41,8 +41,11 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import {MatTreeModule} from '@angular/material/tree';
 
+import {HttpClientModule} from '@angular/common/http';
+
 @NgModule({
   exports: [
+    HttpClientModule,
     A11yModule,
     CdkStepperModule,
     CdkTableModule,
@@ -88,8 +91,3 @@ import {MatTreeModule} from '@angular/material/tree';
   ]
 })
 export class DemoMaterialModule {}
-
-
-/**  Copyright 2019 Google LLC. All Rights Reserved.
-    Use of this source code is governed by an MIT-style license that
-    can be found in the LICENSE file at http://angular.io/license */
